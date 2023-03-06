@@ -7,7 +7,10 @@ The Pomodoro technique is based on having 25 minutes focused in studying, work o
 
 ## 🌆 Images
 
-Add your images here.
+<img src="./assets/screenshot-1.png" alt="Pomodoro App Screenshot"/>
+<img src="./assets/screenshot-2.png" alt="Pomodoro App Screenshot"/>
+<img src="./assets/screenshot-3.png" width="303.45" alt="Pomodoro App Screenshot"/>
+<img src="./assets/screenshot-4.png" width="300" alt="Pomodoro App Screenshot"/>
 
 ## Extra Credits
 
