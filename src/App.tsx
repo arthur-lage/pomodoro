@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import ClockAlarm from "./clock-alarm.mp3";
 
 export function App() {
-  const defaultTimeInMinutes = 0.1;
+  const defaultTimeInMinutes = 25;
 
   let focusTimeInMinutes = defaultTimeInMinutes;
-  let restTimeInMinutes = 0.1;
+  let restTimeInMinutes = 5;
 
   const [isCounterActive, setIsCounterActive] = useState(false);
   const [time, setTime] = useState(defaultTimeInMinutes * 60);
@@ -75,22 +75,26 @@ export function App() {
       </h1>
 
       <main className="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <h2 className="font-nunito tracking-wider uppercase font-bold text-white text-3xl self-center">
+          {currentMode === "focus" ? "focus" : "rest"}
+        </h2>
+
         <div className="flex gap-3 items-center self-center mt-12 font-odibee-sans tracking-wider text-white text-7xl">
           <span>{String(Math.floor(time / 60)).padStart(2, "0")}</span>
           <span>:</span>
           <span>{String(Math.floor(time % 60)).padStart(2, "0")}</span>
         </div>
 
-        <div className="flex items-center gap-6 self-center mt-20">
+        <div className="flex-col sm:flex-row flex items-center gap-6 self-center mt-20">
           <button
-            className="text-white text-xl font-nunito font-semibold tracking-wide p-2 rounded-md border-2 border-[#fff] w-[12rem] shadow-lg hover:bg-white hover:text-light-red transition-all duration-150"
+            className="text-white text-xl font-nunito font-semibold tracking-wide p-2 rounded-md border-2 border-[#fff] w-[15rem] sm:w-[12rem] shadow-lg hover:bg-white hover:text-light-red transition-all duration-150"
             onClick={handleCounterActivity}
           >
             {isCounterActive ? "pause" : "start"}
           </button>
 
           <button
-            className="text-white text-xl font-nunito font-semibold tracking-wide p-2 rounded-md border-2 border-[#fff] w-[12rem] shadow-lg hover:bg-white hover:text-light-red transition-all duration-150"
+            className="text-white text-xl font-nunito font-semibold tracking-wide p-2 rounded-md border-2 border-[#fff] w-[15rem] sm:w-[12rem] shadow-lg hover:bg-white hover:text-light-red transition-all duration-150"
             onClick={handleResetTimer}
           >
             reset
